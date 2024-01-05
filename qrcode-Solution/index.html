@@ -25,26 +25,34 @@
       :root {
         --White: hsl(0, 0%, 100%);
         --Lightgray: hsl(212, 45%, 89%);
-        --Grayishblue: hsl(220, 15%, 55%);
+        --Grayishblue: hsl(219, 15%, 55%);
         --Darkblue: hsl(218, 44%, 22%);
         font-size: 15px;
-      }
-      h1 {
-        font-size: 18px;
       }
       body {
         display: grid;
         place-items: center;
         height: 100vh;
         background-color: var(--Lightgray);
+        font-family: 'outfit', Arial, sans-serif;
+      }
+      
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--Darkblue);
+      }
+      p {
+        font-weight: 500;
+        color: var(--Grayishblue);
       }
       .card {
+        --padding: 1rem;
         background-color: #fff;
-        width: 300px;
-        padding: 1rem;
+        width: calc(300px + var(--padding)); /* Soma 300px(tamanho da imagem) com 1rem(padding do card todo) // Sum 300px (image size) with 1rem (padding of the entire card) */
+        padding: var(--padding);
         border-radius: 20px;
-        box-shadow: 0 0 2rem
-          color-mix(in hsl, var(--Grayishblue), var(--Lightgray) 75%);
+        box-shadow: 0 0 3rem hsla(var(--Grayishblue), 25); /* Utilizo a tag `hsla`, que serve para converter valores em cores, para conseguir deixar a cor com 25% de opacidade // I use the `hsla` tag, which is used to convert values ​​into colors, to make the color 25% opacity */
       }
       .card *:not(img) {
         margin: 1rem 1rem 1rem;
@@ -54,9 +62,7 @@
         width: 100%;
         border-radius: 15px;
       }
-      p {
-        color: var(--Grayishblue);
-      }
+
       /* === */
       .attribution {
         font-size: 11px;
